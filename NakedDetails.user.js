@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Naked Details
 // @namespace    https://bluestockingsread.com/
-// @version      2.0.0
+// @version      2.0.1
 // @description  Automatically opens collapsed <details> elements, including ones added later. Includes per-site controls and manual open/close commands.
 // @author       Kiera
 // @match        *://*/*
@@ -12,10 +12,10 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @license      MIT
-// @homepageURL  https://github.com/BluestockingsRead/NakedDetails
-// @supportURL   https://github.com/BluestockingsRead/NakedDetails/issues
-// @downloadURL  https://raw.githubusercontent.com/BluestockingsRead/NakedDetails/main/NakedDetails.user.js
-// @updateURL    https://raw.githubusercontent.com/BluestockingsRead/NakedDetails/main/NakedDetails.user.js
+// @homepageURL  https://github.com/BluestockingsRead/Naked-Details
+// @supportURL   https://github.com/BluestockingsRead/Naked-Details/issues
+// @downloadURL  https://raw.githubusercontent.com/BluestockingsRead/Naked-Details/main/NakedDetails.user.js
+// @updateURL    https://raw.githubusercontent.com/BluestockingsRead/Naked-Details/main/NakedDetails.user.js
 // ==/UserScript==
 
 /* ===================================================================
