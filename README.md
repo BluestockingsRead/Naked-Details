@@ -1,16 +1,116 @@
-### Naked Details
-A very simple userscript to automatically open all `<details>` tags on any website. It's super basic so you can customize it however you wish.
+# Naked Details
 
-- **File:** NakedDetails.user.js
-- **Description:** Opens all `<details>` HTML tags on any website. Easily tweakable to target specific sites or details tags with specific classes.
-- **Usage:** Install the script using a userscript manager (such as Tampermonkey) to reveal details tags on any website.
+> Every `<details>` on the page, already open. 📂
 
-#### Notes
-I'm still learning, but here are some potentially helpful tips from a friend:
+**Naked Details** is a tiny userscript that expands collapsed `<details>`
+elements, so you can read, search, copy, or print the whole page without
+opening each section by hand.
 
-- **Page Load Timing:** The script doesn't check if the page has fully loaded before it runs. If the script runs before all `<details>` elements are loaded, some may not be opened. To address this, you could run the script after the DOMContentLoaded event or use a MutationObserver to watch for changes in the DOM.
-- **Dynamic Content:** If `<details>` elements are dynamically added to the page after the script runs (for example, through AJAX calls or user interaction), those won't be opened by this script. A MutationObserver could also help in this case.
-- **Error Handling:** The script catches errors and logs them to the console. However, it might be helpful to provide more context in the error message, such as the current URL or other relevant information.
+Documentation, changelogs, FAQs, troubleshooting guides, and technical
+discussions love tucking the useful part behind disclosure triangles.
+This unfolds them.
 
-#### License
-This script is licensed under the MIT License.
+It also catches `<details>` added later, because modern sites rarely finish
+building the page when they claim they have.
+
+Automatic opening is enabled by default. It can be disabled separately for
+any site from your userscript manager's menu.
+
+## 🚀 Install
+
+1. Install a userscript manager:
+   [Tampermonkey](https://www.tampermonkey.net/) and
+   [Violentmonkey](https://violentmonkey.github.io/) both work.
+2. **[Install Naked Details ⬇️](https://github.com/BluestockingsRead/NakedDetails/raw/main/NakedDetails.user.js)**
+
+Your userscript manager will show its usual installation prompt. After that,
+updates can be handled automatically through the manager.
+
+## ✨ What it does
+
+- Opens every `<details>` element once the page is ready.
+- Watches for new ones, covering lazy-loaded and infinite-scroll content.
+- **Leaves your clicks alone.** Anything you close by hand stays closed.
+- Remembers whether automatic opening is enabled or disabled for each site.
+- Provides commands to open or close everything manually at any time.
+
+The watcher only responds to *newly added* elements. It will not reopen
+something a half-second after you deliberately closed it.
+
+## 🔍 Handy for
+
+- Searching long pages more predictably with Ctrl+F
+- Reading documentation without opening dozens of sections
+- Printing or saving complete pages as PDFs
+- Copying full FAQs, changelogs, or troubleshooting guides into notes
+- Comparing settings, options, or release entries side by side
+- Reducing repetitive clicking on small disclosure controls
+
+## 🎛️ Menu commands
+
+Three commands are available from your userscript manager's menu:
+
+| Command | What it does |
+|---|---|
+| **Open all details on this page** | Performs a one-time sweep of the current page. Handy when automatic opening is disabled or something slipped through. |
+| **Close all details on this page** | Collapses every currently open `<details>` element. The undo button. |
+| **Auto-open for this site: ON/OFF** | Toggles automatic opening for the current site and remembers the preference. The label shows the current state. |
+
+### Per-site preferences
+
+Opening everything everywhere is nice in theory, but some sites use
+`<details>` for navigation menus, settings panels, accordions, and other
+interface controls. Expanding all of those at once can make a hot mess.
+
+Switch automatic opening off for that site and it stays off there. Everywhere
+else continues working normally.
+
+The two manual commands remain available even when automatic opening is
+disabled.
+
+## 💻 Compatibility
+
+Naked Details should work in modern Chromium- and Firefox-based browsers with
+a compatible userscript manager.
+
+The script uses:
+
+- `<details>`
+- `MutationObserver`
+- `GM_registerMenuCommand`
+- `GM_setValue`
+- `GM_getValue`
+
+Tampermonkey and Violentmonkey support the required userscript APIs.
+
+## 🧪 Demo page
+
+[`demo.html`](demo.html) contains static, nested, and dynamically inserted
+`<details>` elements.
+
+It's useful for checking that the script still behaves correctly after a
+change—or for seeing what Naked Details does before trying it on a real site.
+
+To test the demo directly from your computer, you may need to enable
+**Allow access to file URLs** for your userscript manager in the browser's
+extension settings. Userscript managers cannot normally modify `file://`
+pages without that permission.
+
+## 🔒 Privacy
+
+Naked Details collects nothing and sends nothing.
+
+There are:
+
+- No analytics
+- No telemetry
+- No network requests
+- No stored page content or browsing history
+
+The only saved information is whether automatic opening is enabled or
+disabled for a site. However, that preference is stored **locally** by your userscript
+manager and never leaves the browser.
+
+## 📜 License
+
+Naked Details is licensed under the MIT License. See [LICENSE](LICENSE).
