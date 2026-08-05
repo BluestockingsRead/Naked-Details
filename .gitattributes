@@ -1,0 +1,8 @@
+# ===================================================================
+# ↩️ Line endings
+# ===================================================================
+# LF in the repo and LF on checkout, regardless of anyone's local
+# core.autocrlf. Without this, the userscript keeps flip-flopping
+# between CRLF and LF and every edit shows up as a whole-file rewrite.
+
+* text=auto eol=lf
