@@ -21,7 +21,7 @@ any site from your userscript manager's menu.
 1. Install a userscript manager:
    [Tampermonkey](https://www.tampermonkey.net/) and
    [Violentmonkey](https://violentmonkey.github.io/) both work.
-2. **[Install Naked Details ⬇️](https://github.com/BluestockingsRead/NakedDetails/raw/main/NakedDetails.user.js)**
+2. **[Install Naked Details ⬇️](https://raw.githubusercontent.com/BluestockingsRead/NakedDetails/main/NakedDetails.user.js)**
 
 Your userscript manager will show its usual installation prompt. After that,
 updates can be handled automatically through the manager.
