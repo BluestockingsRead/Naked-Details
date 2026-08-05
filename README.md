@@ -107,9 +107,10 @@ There are:
 - No network requests
 - No stored page content or browsing history
 
-The only saved information is whether automatic opening is enabled or
-disabled for a site. However, that preference is stored **locally** by your userscript
-manager and never leaves the browser.
+Nothing is saved at all until you change something. Browsing with the script
+installed writes nothing, ever. Using the auto-open toggle stores a single
+on/off flag for that one hostname, held **locally** by your userscript manager,
+and it never leaves the browser.
 
 ## 📜 License
 
